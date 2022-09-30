@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="anchor_area">
+        <div id="anchor_div5" class="anchor_div div5">
+            <header class="quick_pos">
+                <div><a href="index.html" class="main-name"><img src="image/logo.png" alt=""></a></div> 
+                <ul class="quick">
+                    <li><a href="javascript:;"  data-anchor="anchor_div6">Contents</a></li>
+                </ul>
+            </header>
+
+            <div class="header2">
+                <p class="font"><b>더 쉽고 재밌게 즐기는<br>국민대학교 기록물</b></a></p>
+              </div>
+
+            <button class="arrow_btn">
+                <a href="javascript:;" data-anchor="anchor_div6" class="arrow"><span></span></a>
+            </button>
+
+        </div>
+        <div id="anchor_div6" class="anchor_div div6"><br><br><b>CONTENTS</b><br><br><br>
+            <a href="1.html" class="content1">
+                <img src="image/content1.png" width=350 height=400alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>
+            <a href="2.html" class="content2">
+                <img src="image/content2.png" width=350 height=400 alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>
+            <a href="3.html" class="content3">
+                <img src="image/content3.png" width=350 height=400 alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>
+            <a href="4.html" class="content3">
+                <img src="image/content4.png" width=350 height=400 alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>
+            <a href="5.html" class="content3">
+                <img src="image/content5.png" width=350 height=400 alt="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p class="footer"><b><br><br>학생 사회를 기억합니다, 국민대학교 기록물관리위원회<br>
+            Archives of Kookmin University student council</b><br></a></p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+     var $menu = $('.quick li a'),
+    $contents = $('.anchor_area .anchor_div')
+    $(window).scroll(function(){
+    var scltop = $(window).scrollTop();
+    $.each($contents, function(idx, item){
+    var $target   = $contents.eq(idx),
+    i = $target.index(),
+    targetTop = $target.offset().top;
+    if (targetTop <= scltop) {
+    $menu.removeClass('on');
+    $menu.eq(idx).addClass('on');
+    }
+    if (!(200 <= scltop)) {
+    $menu.removeClass('on');
+    }
+    })
+    });
+
+   /* 탭 클릭 */
+    $('.quick li a').on('click',function(){
+    var anchorId = $(this).attr('data-anchor');
+
+    // 스크롤 이동
+    scroll_to_anchor_tab(anchorId);
+    });
+
+   // 퀵배너 스크롤
+    $(window).scroll(function(){
+    var quickPos = $('.quick_pos').offset().top;
+    var winPos = $(window).scrollTop();
+    if( winPos > quickPos ) $('.quick_pos .quick').addClass('fixed');
+    else $('.quick_pos .quick').removeClass('fixed');
+    });
+    });
+
+    // 탭 이동 - 부드러운 스크롤
+    function scroll_to_anchor_tab(anchor_id,speed) {
+    if( !speed ) var speed = 'slow';
+    var a_tag = $("#"+anchor_id);
+    if(a_tag.length > 0){
+    $('html, body').animate({
+    scrollTop: a_tag.offset().top - $('').height() -  $('').height() // 상단에 특정 위치를 제외하고 스크롤할때 해당 이름 작성
+    }, speed);
+    }
+    }
+    </script>
+</body>
+</html>
