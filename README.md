@@ -7,8 +7,7 @@
 2. Html, Css, Javascript를 통해 개발
 
 ### 콘텐츠
-1. 
+* 국민대학교의 기록물들을 더욱 쉽고 재밌게 접할 수 있도록 반응형 콘텐츠로 제작
+* 제작한 콘텐츠들은 한달에 한번씩 퀴즈 형태로 간식 이벤트 진행
 
 <img width="913" alt="무제" src="https://github.com/shinala0602/Analysis-of-the-Location-of-the-Urban-Revitalization-in-South-Jeolla-Province/assets/59050396/9255510f-7985-42e9-9150-e8a01a91817a">
-
-<img width="906" alt="무제" src="https://github.com/shinala0602/Analysis-of-the-Location-of-the-Urban-Revitalization-in-South-Jeolla-Province/assets/59050396/4f496f96-5f45-4e33-8d1d-e9e7fa28ad7b">
